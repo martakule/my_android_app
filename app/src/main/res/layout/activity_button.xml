@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/cat">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="10dp"
+        >
+            <marta.android.catmusic.ResizeableButton
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Short text"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:soundEffectsEnabled="false"
+                android:textSize="22sp"
+                android:backgroundTint="@color/white"
+                android:id="@+id/meow7"
+                android:textAllCaps="false"
+                />
+            <marta.android.catmusic.ResizeableButton
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very long text that should not even be on a button"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:soundEffectsEnabled="false"
+                android:textSize="22sp"
+                android:backgroundTint="@color/white"
+                android:id="@+id/meow9"
+                android:textAllCaps="false"
+                />
+        </LinearLayout>
+</ScrollView>

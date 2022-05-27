@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         meow7 = MediaPlayer.create(this, R.raw.meow7);
         meow8 = MediaPlayer.create(this, R.raw.meow8);
         meow9 = MediaPlayer.create(this, R.raw.meow9);
+        Intent intent = getIntent();
+        handleStorybookIntent(intent);
     }
 
     public void openAbout(View view) {
@@ -42,6 +44,29 @@ public class MainActivity extends AppCompatActivity {
     public void openCustomize(View view) {
         Intent intent = new Intent(this, Customize.class);
         this.startActivity(intent);
+    }
+
+    public void handleStorybookIntent(Intent intent) {
+        String component = intent.getStringExtra("component");
+        if (intent.getData() != null) {
+            if (intent.getData().getQueryParameter("component") != null) {
+                component = intent.getData().getQueryParameter("component");
+            }
+        }
+        if (component == "button") {
+            Intent buttonIntent = new Intent(this, ResizeableButtonActivity.class);
+            this.startActivity(buttonIntent);
+        }
+
+        if (component == "about") {
+            Intent aboutIntent = new Intent(this, About.class);
+            this.startActivity(aboutIntent);
+        }
+
+        if (component == "customize") {
+            Intent customizeIntent = new Intent(this, Customize.class);
+            this.startActivity(customizeIntent);
+        }
     }
 
     public void meow1(View view) {
